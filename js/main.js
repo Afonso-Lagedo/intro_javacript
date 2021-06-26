@@ -1,24 +1,44 @@
-var nome = "Desenvolvedor Afonso Henriques";
-var idade = 27;
-var idade2 = 3;
-var frase = "Vai Corinthians"
-//alert("Olá " + nome+" idade: "+idade+" anos");
-//alert(idade+idade2); 
+var lista = ["Afonso", "Henriques"];
+console.log (lista);//imprime o array inteiro
 
-//Para exibição no console do navegador
+console.log(lista[1]); //imprime a posição 1 do array
+alert(lista[0]);//Idem linha superior com Alert na posição 0 do array
+
+//adicioando elementos na lista
+lista.push("Silva");
+console.log (lista);
+
+//tirar ultimo elemento da lista
+lista.pop();
+console.log (lista);
+
+//exibindo o quantidade de posições no array
+console.log(lista.length);
+
+//inverter a exibição dos elementos
+//console.log(lista.reverse());
+
+//para exibição em formato String
+console.log(lista.toString());
+
+//para exibição da primeira letra do primeiro elemento
+console.log(lista.toString()[0]);
+
+//para exibição dos elementos sem a vírgula
+console.log(lista.join(" "));//com espaço no caso, poderia ser com -: join("-")
+
+
+//********DICIONÁRIO*********
+var nome = {primeiro:"Afonso", segundo:"Henriques"}
 console.log(nome);
-console.log(idade+idade2);
-console.log(frase);
-console.log(frase.replace("Corinthians","Brasil"));//troca de elementos do String
-console.log(frase.toUpperCase());//Maiúsculas
-console.log(frase.toLowerCase());//Minúsculas 
 
-//Operações
+//elemento especifico 
+console.log(nome.primeiro);
 
-var n1 = 5;
-var n2 = 2;
 
-console.log(n1+n2);
-console.log(n1-n2);
-console.log(n1*n2);
-console.log(n1/n2);
+//******LISTA DE DICIONÁRIOS*******
+var nomes = [{primeiro:"Afonso", segundo:"Henriques"}, {primeiro:"Felipe", segundo:"Lagedo"}]
+console.log(nomes);
+
+//alert na posição especifica 
+alert(nomes[1].segundo);
