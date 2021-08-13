@@ -11,3 +11,8 @@ const arrowFn1 = () => {
 document.getElementById("demostracao0").innerHTML = fn();//exibição no html no id demostracao
 document.getElementById("demostracao1").innerHTML = arrowFn0();
 document.getElementById("demostracao2").innerHTML = arrowFn1();
+
+//função é um objeto
+fn.teste = "teste4";
+alert(fn.teste);
+
