@@ -1,39 +1,39 @@
-//Spread
-var pecas = ['roda', 'portas'];
-var carro = ['motor', ...pecas, 'escapamento'];
-//mesma coisa que var carro = ['motor', 'roda', 'portas', 'escapamento'];
+const array = [2,3,4,5,6];//criando array
 
-//exibindo
-document.getElementById("demostracao0").innerHTML = 'Items: '+(carro);
+array.forEach(item =>{ //para cada item do array faça (item é a posição no caso)
+	if(item % 2 === 0){// se for par...
+		console.log(`O número ${item} é par`);//... faça isso
+	}
+	else{//se não for... 
+		console.log(`O número ${item} é impar`);//...faça isso
+	}
 
-//Spread com função
-function fn (x,y,z){} //função fn que recebe x,y,z
-var args = [0,1,2]; // vetor args
-fn(...args);// passando como parâmetro pra função fn os elementos de args
+});
 
-/*
+//else if
 
-####mais alguns operadores#####
-delete //para deletar um elemento
-typeof //para retornar o tipo
+array.forEach(item =>{ //para cada item do array faça (item é a posição no caso)
+	if(item % 2 === 0){
+		console.log(`O número ${item} é divisível por 2`);//o número 6 trava aqui por mais que seja divisível por 3 também
+	}
+	else if(item % 3 === 0){
+		console.log(`O número ${item} é divisível por 3`);
+	}
+	else if(item % 5 === 0){
+		console.log(`O número ${item} é divisível por 5`);
+	}
+});
 
-*/
+//para testar mais de uma função (no caso do 6)
 
-//in
-
-var carro2 = new Array("camaro", "corsa");
-0 in carro2; //retorna true
-5 in carro2; //retorna false
-"camaro" in carro2; //retorna false pois trabalha com índe e não valor 
-"length" in carro2; //retorna true por ser uma propriedade de arrays e strings
-
-//in Objetos
-var meucarro={marca:"Honda", modelo:"Accord"};
-"marca" in meucarro; //retorna true
-
-//operador unário para verificar se é instância
-var dia = new Date(2021, 8, 15);
-
-if(dia instanceof Date){//true
-	//code
-}
+array.forEach(item =>{ //para cada item do array faça (item é a posição no caso)
+	if(item % 2 === 0){
+		console.log(`O número ${item} é divisível por 2`);
+	}
+	if(item % 3 === 0){
+		console.log(`O número ${item} é divisível por 3`);
+	}
+	if(item % 5 === 0){
+		console.log(`O número ${item} é divisível por 5`);
+	}
+});
