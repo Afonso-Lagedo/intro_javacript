@@ -1,11 +1,28 @@
-let arr = [10,20,30,40];
-arr.foo = "olá";//proriedade foo
-// i == array position
+//break
 
-for (let i in arr){//para cada elemento me traga a posição
-	console.log(i);
+var valor = 0;//declaração
+
+while(true){//enquanto for verdade
+	valor++;//incrementa
+
+	if (valor>3){//se isso for verdade...
+		break;//...para o programa
+	}
+
+	console.log(valor);//exibindo
 }
 
-for (let i of arr){//para cada elemento me traga o valor !Apenas valores numerados! por isso que não vem o "olá"
-	console.log(i);
+
+//continue
+
+const array = [1,2,3,4,5,6,7];
+
+for (let posicao = 0; posicao < array.length; posicao++){
+	const valor = array[posicao];
+
+	if (valor %2 === 0){
+		continue;//pula quando no caso a condição for verdadeira
+	}
+
+	console.log(valor);
 }
