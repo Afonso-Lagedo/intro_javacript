@@ -1,6 +1,11 @@
-var n = 0;
+let arr = [3,5,7];
+arr.foo = "olá";
+// i == array position
 
-do{// a diferença do while que ele executa primeiro e depois ...
-	n++;
-	console.log(n);
-}while (n<4);//... verifica a condição   (por isso vai até o 4)
+for (let i in arr){//para cada elemento me traga a posição
+	console.log(i);
+}
+
+for (let i of arr){//para cada elemento me traga o valor
+	console.log(i);
+}
