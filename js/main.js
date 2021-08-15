@@ -1,14 +1,7 @@
-const carro = 'uno';
+const array = ['camaro', 'corsa', 'uno'];
 
-switch(carro){
-	case'camaro':
-	console.log ('R$100.000,00');
-	break;
-	case'corsa':
-	case'uno':
-	console.log ('R$20.000,00');
-	break;
-	default:
-	console.log ('carro fora da lista');
-	break;
+for (let position = 0; position < array.length; position++){//percorrendo o vetor
+	const element = array[position];//recupera a posição do vetor
+	console.log(`Elemento #${position}: ${element}.`);//repuperando posição e valor	
 }
+
