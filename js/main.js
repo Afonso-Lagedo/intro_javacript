@@ -1,74 +1,39 @@
-const user = ['Afonso','Felipe', 'Rafaela'];
+//Spread
+var pecas = ['roda', 'portas'];
+var carro = ['motor', ...pecas, 'escapamento'];
+//mesma coisa que var carro = ['motor', 'roda', 'portas', 'escapamento'];
 
-const gender ={//tipo "ENUM"
-	MAN: Symbol('M'),
-	WOMAN: Symbol('W')
+//exibindo
+document.getElementById("demostracao0").innerHTML = 'Items: '+(carro);
+
+//Spread com função
+function fn (x,y,z){} //função fn que recebe x,y,z
+var args = [0,1,2]; // vetor args
+fn(...args);// passando como parâmetro pra função fn os elementos de args
+
+/*
+
+####mais alguns operadores#####
+delete //para deletar um elemento
+typeof //para retornar o tipo
+
+*/
+
+//in
+
+var carro2 = new Array("camaro", "corsa");
+0 in carro2; //retorna true
+5 in carro2; //retorna false
+"camaro" in carro2; //retorna false pois trabalha com índe e não valor 
+"length" in carro2; //retorna true por ser uma propriedade de arrays e strings
+
+//in Objetos
+var meucarro={marca:"Honda", modelo:"Accord"};
+"marca" in meucarro; //retorna true
+
+//operador unário para verificar se é instância
+var dia = new Date(2021, 8, 15);
+
+if(dia instanceof Date){//true
+	//code
 }
-
-const persons =[//array pessoas
-	{
-		name: 'Afonso',
-		age:27,
-		gender: gender.MAN
-	},
-	{
-		name: 'Felipe',
-		age:4,
-		gender: gender.MAN
-	},
-	{
-		name: 'Rafaela',
-		age:29,
-		gender: gender.WOMAN
-	}
-]
-
-//exibindo quantidade de elementos dentro do array
-document.getElementById("demostracao0").innerHTML = 'Items: '+(persons.length);
-
-
-//verificar se é array 
-document.getElementById("demostracao1").innerHTML = 'É array: '+(Array.isArray(persons));
-
-
-//interar os itens do array arrowfunction
-//para cada item da do array
-persons.forEach((person, index, arr) => {
-	console.log(`Nome: ${person.name} index: ${index}`, arr);
-});
-
-//filtrando array
-const mens = persons.filter(person => person.gender === gender.MAN);
-console.log('MANS: ', mens);
-
-//filtrando array exemplo dois
-const womans = persons.filter(person2 => person2.gender === gender.WOMAN);
-console.log('WOMANS: ', womans);
-
-//adicionando elemento no array através do map
-const personsWithTime = persons.map(person => {
-	person.time="Corinthians";
-	return person;
-});
-
-persons.forEach((arr) => {//exibindo array após a adição do time
-	console.log(arr);
-});
-
-//transformar array em outro tipo 
-const totalAge = persons.reduce((age, person) =>{
-	age += person.age;
-	return age
-},0);
-
-document.getElementById("demostracao2").innerHTML = 'Total age: '+(totalAge);
-
-//somar a idade de todas as pessoas que tem idade ímpar
-const totalOddAges = persons
-		.filter(person => person.age % 2 === 1)//filtrando
-		.reduce((age, person ) => {
-					age += person.age;
-					return age;
-				},0);
-
-document.getElementById("demostracao3").innerHTML = 'Total Odd age: '+(totalOddAges);
