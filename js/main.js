@@ -25,3 +25,13 @@ p.getName();
 p.setName('Felipe');
 
 p.getName();
+
+console.log('#########');
+
+class Car{
+	static name(){//para acessar sem instanciar
+		console.log('CAMARO');
+	}
+}
+
+console.log(Car.name());
