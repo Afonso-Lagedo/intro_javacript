@@ -1,50 +1,59 @@
-const persons = Array.of ('Afonso','Felipe', 30); //cria conforme a quantidade de parâmetros instanciados 
-console.log(persons);
+//forEach
+const carros = Array.of('camaro', 'doblo', 'vectra');
+carros.forEach(carro => console.log(carro));
 
-const persons2 = Array (3);
-console.log(persons2);// posições vazias 
+//map
+const arr =[1,2,3,4,5];
+console.log(arr.map(valor => valor *2));// retorna o array com a nova condição imposta, no caso *2 para para valor OBS não mexe na referência do array
 
-const persons3 = Array('Afonso', 'Feipe');//tipo Array.of
-console.log(persons3);
+//flat
+const a = [1,2,[3,4]];// temos um array dentro de um array
+const b =  a.flat();//concatena os arrays "pai e filho"
+console.log(a);
+console.log(b);
 
-const divs = document.querySelectorAll('div');
-console.log(divs);//node list não funciona as funções de arrays
+const c = [1,2,[3,[4]]];
+console.log(c);
+console.log(c.flat());
+console.log(c.flat(2));//profundidade
 
-const divArray = Array.from(divs);//transformando nodeList em um Array
-console.log(divArray);
+//flatMap
+const h = [1,2,3,4];
+console.log(h.flatMap(value =>[[value * 2]]));
 
-//Adicionando valores no final
+//Interator
+const frutas=["abacaxi", "maçã", "manga"];
+const exemplo = frutas.entries();// função retorna chave/valor
+console.log(exemplo);
+console.log(exemplo.next());
+console.log(exemplo.next());
 
-const carros =['camaro','corsa'];
-console.log(carros);
-carros.push('uno');//adicionando vaalor ao array
-console.log(carros);
-
-//Removendo valores no final
-carros.pop();
-console.log(carros);
-
-//Adicionando valor no início
-carros.unshift('uno');
-console.log (carros);
+//find e filter
+const n =[1,2,3,4];
+console.log(n.find(value => value>2));//primeiro elemento que satisfaz a condição
+console.log(n.filter(value => value>2));//primeiro elemento que satisfaz a condição
 
 
-//Removendo valor no início
-carros.shift();
-console.log (carros);
+//indexOf e lastIndexOf
+const r = [1,2,3,3,4,3];
+console.log(r.indexOf(3));//when the 3 first appears
+console.log(r.lastIndexOf(3)); //when the 3 appears last time
 
-const carros2= ['onix', 'doblo'];
-//juntando arrays sem afetar os envolvidos
-const superCaros= carros.concat(carros2);
+//includes
+console.log(r.includes(1));//return bool(true) if 1 exist in const r
+console.log(r.includes(5));//return bool(true) if 5 exist in const r
 
-console.log(superCaros);
+//some
+console.log(r.some( value => value % 2 === 0)); //return bool(true) if exist pair in const r
 
-//Fatiando Array 
-console.log(carros.slice(0,1));//posição final e inicia que será o intervalo do corte
+//every
+console.log(r.every( value => value % 2 === 0)); //return bool(true) if all elements of const r are pairs
 
-//fatiar apartir da posição1
-console.log(carros.splice(1));
+//sort => ordenation
+console.log(r.sort());
 
-//Adiciona no zero, remove zero com valor C3
-console.log(carros.splice(0,0,'C3'));
-console.log(carros);
+//reverse
+console.log(r.reverse());
+
+//join
+console.log(r.join('-'));//traformation of type of variable for String with separation 
