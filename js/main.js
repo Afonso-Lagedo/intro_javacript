@@ -1,18 +1,27 @@
 'use strict'
 
-class Carro {
-	constructor(qntRodas){
-		this.qntRodas=4;
+class Person {
+	#name='';//modificador de acesso
+	
+	constructor(initialName){
+		this.#name = initialName;
+	}
+
+	setName(name){
+		this.#name=name;
+	}
+
+	getName(){
+		return console.log(this.#name);
 	}
 }
 
-class MuscleCar extends Carro{
-	constructor(rapido){
-		super(4);
-		this.rapido = "sim";
-	}
-} 
+const p = new Person("Afonso");
 
-const camaro = new MuscleCar(true);
+//console.log(p);
 
-console.log(camaro);
+p.getName();
+
+p.setName('Felipe');
+
+p.getName();
