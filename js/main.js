@@ -1,123 +1,50 @@
-console.log("################Design patterns");
-console.log("#########DECORATOR");
+const persons = Array.of ('Afonso','Felipe', 30); //cria conforme a quantidade de parâmetros instanciados 
+console.log(persons);
 
-//1
-function Person (){
-	return{
-		name:'Afonso',
-		lastname:'Silva'
-	}
-}
+const persons2 = Array (3);
+console.log(persons2);// posições vazias 
 
-const x = Person();//não instancia com new
-console.log(x);
+const persons3 = Array('Afonso', 'Feipe');//tipo Array.of
+console.log(persons3);
 
-//2
-function Person2 (name){
-	return{
-		name,
-		lastname:'Silva'
-	}
-}
+const divs = document.querySelectorAll('div');
+console.log(divs);//node list não funciona as funções de arrays
 
-const y = Person2('Afonso');//não instancia com new
-console.log(y);
+const divArray = Array.from(divs);//transformando nodeList em um Array
+console.log(divArray);
 
-//3
-function Person3 (customProperties){
-	return{
-		name:'Afonso',
-		lastname:'Silva',
-		...customProperties
-	}
-}
+//Adicionando valores no final
 
-const w = Person3({name:'Felipe', age: 27});//sobre escrever e adicionar valores 
-console.log(w);
+const carros =['camaro','corsa'];
+console.log(carros);
+carros.push('uno');//adicionando vaalor ao array
+console.log(carros);
+
+//Removendo valores no final
+carros.pop();
+console.log(carros);
+
+//Adicionando valor no início
+carros.unshift('uno');
+console.log (carros);
 
 
-console.log("#########SINGLETON");
-function Pessoa(){
-	if(!Pessoa.instance){
-		Pessoa.instance = this;
-	}
+//Removendo valor no início
+carros.shift();
+console.log (carros);
 
-	return Pessoa.instance;
-}
+const carros2= ['onix', 'doblo'];
+//juntando arrays sem afetar os envolvidos
+const superCaros= carros.concat(carros2);
 
-const p = Pessoa.call({ name:'Afonso'});
+console.log(superCaros);
 
-const p2 = Pessoa.call({name:'Felipe'});
+//Fatiando Array 
+console.log(carros.slice(0,1));//posição final e inicia que será o intervalo do corte
 
-console.log(p);
+//fatiar apartir da posição1
+console.log(carros.splice(1));
 
-console.log(p2);//Uma vez que a classe foi instanciada, não poderá retornar outro valor 
-
-
-console.log("#########DECORATOR");
-//função que recebe função
-let valor = false;
-
-function callIfFuncao(fn){
-	return !! valor && (fn);
-}
-
-function sum (a,b){
-	return a + b;
-}
-
-console.log(callIfFuncao(sum(2,3)));//retorna 2+3 se var valor for true
-valor = true;
-console.log(callIfFuncao(sum(2,3)));//retorna 2+3 se var valor for true
-valor = false;
-console.log(callIfFuncao(sum(2,3)));//retorna 2+3 se var valor for true
-
-console.log("#########OBSERVER");
-class Observable{
-	constructor(){//deve ter uma lista
-		this.lista =[];
-	}
-
-	subscribe(fn){//para adicionar
-		this.lista.push(fn);
-	}
-
-	notify(data){//rebe o dado
-		this.lista.forEach(fn => fn(data));//para cada elemento da lista chama a função passando o dado
-	}
-	unsubscribe(fn){//filtra na linha os que forem diferentes
-		this.lista = this.lista.filter(obs => obs !== fn);
-	}
-}
-
-const ob = new Observable();
-//preenchendo
-const log1 = data => console.log(`Subscribe 1: ${data}`);
-const log2 = data => console.log(`Subscribe 2: ${data}`);
-const log3 = data => console.log(`Subscribe 3: ${data}`);
-
-ob.subscribe(log1);
-ob.subscribe(log2);
-ob.subscribe(log3);
-//passando valor
-ob.notify('primeiro notify');
-
-ob.unsubscribe(log2);//removendo log2
-
-ob.notify('segundo notify');
-
-console.log("#########MODULE");
-let name ='Afonso';
-
-function getName(){
-	return name;
-}
-function setName(name){
-	name=newName;
-}
-
-module.exports = {
-	getName,
-	setName
-};
-
+//Adiciona no zero, remove zero com valor C3
+console.log(carros.splice(0,0,'C3'));
+console.log(carros);
