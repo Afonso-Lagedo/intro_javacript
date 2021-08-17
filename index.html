@@ -6,9 +6,24 @@
 
     <title>trabalhando com JS</title>
   </head>
-  <body>
-    <p>Exibindo no console</p>
+  <body onload="load()"><!--Quando carregar-->
+    
+    <button onclick="botao()">Clique</button>
+    <button onclick="botao2()">Clique2</button>
+    <h3 id="btn2"></h3>
+    <button onclick="botao3()">Clique3</button>
+    
+    <p id="mouse" onmouseover="trocar()" onmouseout="voltar()">PASSE O MOUSE</p>
 
+    <!--Passando direto-->
+    <p onmouseover="trocarDireto(this)" onmouseout="voltarDireto(this)">PASSE O MOUSE</p>
+    <p onmouseover="trocarDireto(this)" onmouseout="voltarDireto(this)">PASSE O MOUSE</p>
+
+    <select onchange="escolha(this)">
+    	<option value="1">Valor 1</option>
+    	<option value="2">Valor 2</option>
+    	<option value="3">Valor 3</option>
+    </select>
 
     <script src="js/main.js"></script>
 

@@ -1,59 +1,36 @@
-//forEach
-const carros = Array.of('camaro', 'doblo', 'vectra');
-carros.forEach(carro => console.log(carro));
+function botao(){
+	alert("teste");
+}
 
-//map
-const arr =[1,2,3,4,5];
-console.log(arr.map(valor => valor *2));// retorna o array com a nova condição imposta, no caso *2 para para valor OBS não mexe na referência do array
+function botao2(){
+	document.getElementById("btn2").innerHTML = "<b>teste botão 2</b>";
+}
 
-//flat
-const a = [1,2,[3,4]];// temos um array dentro de um array
-const b =  a.flat();//concatena os arrays "pai e filho"
-console.log(a);
-console.log(b);
+function botao3(){
+	//window.location.href = "SITE" para abrir na mesma aba
+	window.open("https://github.com/Afonso-cmd/intro_javacript");//para abrir em outraaba
+}
 
-const c = [1,2,[3,[4]]];
-console.log(c);
-console.log(c.flat());
-console.log(c.flat(2));//profundidade
+function trocar(){
+	document.getElementById("mouse").innerHTML = "PASSOU O MOUSE"
+}
 
-//flatMap
-const h = [1,2,3,4];
-console.log(h.flatMap(value =>[[value * 2]]));
+function voltar(){
+	document.getElementById("mouse").innerHTML = "PASSE O MOUSE"
+}
 
-//Interator
-const frutas=["abacaxi", "maçã", "manga"];
-const exemplo = frutas.entries();// função retorna chave/valor
-console.log(exemplo);
-console.log(exemplo.next());
-console.log(exemplo.next());
+function trocarDireto(elemento){
+	elemento.innerHTML = "PASSOU O MOUSE"
+}
 
-//find e filter
-const n =[1,2,3,4];
-console.log(n.find(value => value>2));//primeiro elemento que satisfaz a condição
-console.log(n.filter(value => value>2));//primeiro elemento que satisfaz a condição
+function voltarDireto(elemento){
+	elemento.innerHTML = "PASSE O MOUSE"
+}
 
+function load(){
+	alert("página carregada");
+}
 
-//indexOf e lastIndexOf
-const r = [1,2,3,3,4,3];
-console.log(r.indexOf(3));//when the 3 first appears
-console.log(r.lastIndexOf(3)); //when the 3 appears last time
-
-//includes
-console.log(r.includes(1));//return bool(true) if 1 exist in const r
-console.log(r.includes(5));//return bool(true) if 5 exist in const r
-
-//some
-console.log(r.some( value => value % 2 === 0)); //return bool(true) if exist pair in const r
-
-//every
-console.log(r.every( value => value % 2 === 0)); //return bool(true) if all elements of const r are pairs
-
-//sort => ordenation
-console.log(r.sort());
-
-//reverse
-console.log(r.reverse());
-
-//join
-console.log(r.join('-'));//traformation of type of variable for String with separation 
+function escolha(elemento){
+	console.log(elemento.value);
+}
